@@ -1,0 +1,3 @@
+domainurl: 'https://petstore3.swagger.io'
+apiver: '/api/v3/'
+#authendpoint: 'https://token'
