@@ -13,22 +13,18 @@ This API automation is based on the pet store sample hosted at https://petstore3
 - Apache Maven
 - Rest Assured Library (automatically downaloaded with the Project POM)
 
-## Executing Tests
-- Check the API Pet Store Sample Server is running
-- Clone or download this repository
-- Open cmd & cd to the repository directory
-- Build the project - `mvn install`
-- To Run all tests - `mvn clean test`
-- To Run specific tests update POM configuration or use pattern - `mvn test -Dtest=Store*Test`
-- To Run Tests and get HTML report  - `mvn clean site`
+## Test Scenarios
 
-## Automation Report 
- - HTML report is generated in project's `/target/site/surefire-report.html`
- - XML report is generated in project's `/target/surefire-reports`
-
-## Logs
- - Console log is generated ins system's console output
- - Log file is generated in project's `/target/logs/Info.log`
+|Level	| Resource	| Scenario	| Pros/Cons |
+|-----	| --------  | ---------	| ---------	|
+|Unit (Component) | Pet | Add Pet to store | Pro: Contract service can be tested throughly <br/> Con : this is con |	
+||Pet |	Get pet by Status|	Pro - Each pet data can be validated <br/>Con - Pets with required status should exists" |
+||Store|	Create New Order For Pet|	Pro - New Order service can be tested fully <br/>Con: Pets should exists in store"|
+||User	|Get User Login To System |	Pro - User login can be used as sanity check |
+||||
+|Integration|	Pet, Store|	Add Pet to Store and Place Order|	Pro: Integration of two (or more) resources is validated <br/>Con: Indvidual service working is pre-requiste"|
+||||
+|EndToEnd |	User, Pet, Store |	User Login,Search Pet and PlaceOrder |	Pro: System level testing is valided <br/>Con: Depends on integration of services"|
  
 ## Automation Framework
 - Automation framework is based on Rest-assured library functions
@@ -50,3 +46,20 @@ This API automation is based on the pet store sample hosted at https://petstore3
  - /src/test/resouces
     - config
     - files
+
+## Executing Tests
+- Check the API Pet Store Sample Server is running
+- Clone or download this repository
+- Open cmd & cd to the repository directory
+- Build the project - `mvn install`
+- To Run all tests - `mvn clean test`
+- To Run specific tests update POM configuration or use pattern - `mvn test -Dtest=Store*Test`
+- To Run Tests and get HTML report  - `mvn clean site`
+
+## Automation Report 
+ - HTML report is generated in project's `/target/site/surefire-report.html`
+ - XML report is generated in project's `/target/surefire-reports`
+
+## Logs
+ - Console log is generated ins system's console output
+ - Log file is generated in project's `/target/logs/Info.log` 
